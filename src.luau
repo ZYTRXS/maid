@@ -47,8 +47,8 @@ end
 
 -- Gives the Maid a task to clean up when :CleanUp() is initiated.
 function Maid:GiveTask(_task: MaidTask)
-	if typeof(_task)=="table" and not _task.Destroy and not _task.CleanUp and not _task.Disconnect then
-		error("Invalid MaidTask, class/table must contain at least one of the following methods for cleanup: :Destroy(), :CleanUp(), or :Disconnect().")
+	if typeof(_task)=="table" and not _task.Destroy and not _task.CleanUp and not _task.Disconnect and not _task.DisconnectAll then
+		error("Invalid MaidTask, class/table must contain at least one of the following methods for cleanup: :Destroy(), :CleanUp(), :DisconnectAll() or :Disconnect().")
 		return
 	end
 	
@@ -76,6 +76,10 @@ function Maid:CleanUp()
 			
 			if _task.Disconnect then
 				_task:Disconnect()
+			end
+
+			if _task.DisconnectAll then
+				_task:DisconnectAll()
 			end
 		end
 		
