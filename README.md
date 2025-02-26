@@ -1,5 +1,5 @@
 # maid
-Simple maid for roblox LuaU with easy to understand documentation
+Simple maid for Roblox with easy to understand documentation.
 
 This was made specifically for [Timebomb Madness](https://timebombmadness.com/) but since it's so versatile I decided to upload it here for future use.
 
