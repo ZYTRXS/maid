@@ -13,7 +13,6 @@ Maid:GiveTask(...) supports the following:
 - Class/Table with :Destroy() method (:Destroy() method called on cleanup)
 - Maid (:CleanUp() method called, meaning you can nest Maids!)
 - Signals (Because Winbloo likes using those, they're supported as well!)
-
 ]]
 
 export type _MaidPrototype = {
