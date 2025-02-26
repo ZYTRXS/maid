@@ -12,7 +12,7 @@ Maid:GiveTask(...) supports the following:
 - Function (Called on cleanup)
 - Class/Table with :Destroy() method (:Destroy() method called on cleanup)
 - Maid (:CleanUp() method called, meaning you can nest Maids!)
-- Signals (Because Winsage likes using those, they're supported as well!)
+- Signals (Because Winbloo likes using those, they're supported as well!)
 
 ]]
 
