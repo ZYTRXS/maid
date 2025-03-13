@@ -14,6 +14,7 @@ Maid:GiveTask(...) supports the following:
 - Maid (:CleanUp() method called, meaning you can nest Maids!)
 - Signals (Because Winbloo likes using those, they're supported as well!)
   - Note for Signals; disable the strict metatable checking for Signal internally, otherwise they'll error when Maid tries checking for possible cleanup methods.
+- Threads
 ]]
 
 export type _MaidPrototype = {
@@ -66,6 +67,8 @@ function Maid:CleanUp()
 			_task:Disconnect()
 		elseif typeof(_task)=="Instance" then
 			_task:Destroy()
+		elseif typeof(_task)=="thread" then
+			task.cancel(_task)
 		else
 			if _task.Destroy then
 				_task:Destroy()
